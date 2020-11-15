@@ -1,0 +1,22 @@
+*{
+    box-sizing: content-box;
+}
+
+#musicList{
+    display: flex column;
+}
+
+span{
+    display: inline-block;
+}
+
+.music{
+    margin-bottom: 0;
+    display: flex;
+    align-content: space-between;
+}
+
+.title{
+    margin: 0;
+    font-size: 12px;
+}

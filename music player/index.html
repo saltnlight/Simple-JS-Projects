@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="musicList">
-        <p class="music" data-musicNum="1" id="ali1" >
-            What if I told you I love you <p>Ali Gatie</p>
-        </p>
-        <p class="music" data-musicNum="2">
-            Africa Unite <p>Bob Marley</p>
-        </p>
-        <p class="music" data-musicNum="3">
-            Ancient Words <p>Micheal Smith</p>
-        </p>
-    </div>
+    <div class="container">
+        <div id="musicList">
+            <p class="music" data-music-num="1">
+                What if I told you I love you <span>&#9655</span>
+            </p>
+            <p class="title">Ali Gatie</p>
 
-    <audio controls autoplay id="player" style="width: 400px;"></audio>
+            <p class="music" data-music-num="2">
+                Africa Unite <span>&#9655</span> 
+            </p>
+            <p class="title">Bob Marley</p>
+
+            <p class="music" data-music-num="3">
+                Ancient Words <span>&#9655</span>
+            </p>
+            <p class="title">Micheal Smith</p>
+        </div>
+        
+        <audio controls autoplay id="player" style="width: 400px;">
+        This device doesn't support audio
+        </audio>
+    </div>
 </body>
 </html>
