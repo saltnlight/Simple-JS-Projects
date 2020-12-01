@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <section class="container">
         <div id="musicList">
             <p class="music" data-music-num="1">
                 What if I told you I love you <span>&#9655</span>
@@ -25,10 +25,18 @@
             </p>
             <p class="title">Micheal Smith</p>
         </div>
-        
-        <audio controls autoplay id="player" style="width: 400px;">
-        This device doesn't support audio
-        </audio>
-    </div>
+        <br>
+        <section>
+            <audio controls autoplay id="player" onended="songEnded()">
+                This device doesn't support audio
+            </audio>
+            <div id="controls">
+                <span id="next" class="p1">Next</span>
+                <span id="prev" class="p1">Prev</span>
+                <span id="loop" class="p1">&infin;</span>
+                <span class="p1">Shuffle</span>
+            </div>
+        </section>
+    </section>
 </body>
 </html>

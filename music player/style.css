@@ -1,21 +1,38 @@
 *{
     box-sizing: content-box;
 }
+.p1{
+    padding: 0 10px;
+}
+span{
+    display: inline-block;
+}
+audio{
+    width: 100%;
+}
+.container{
+    width: 70%;
+    height: 100vh;
+    margin: 2rem auto;
+    border: 2px solid black;
+    border-radius: 5px 5px 0 0;
+}
 
 #musicList{
     display: flex column;
 }
-
-span{
-    display: inline-block;
+#controls{
+    /* display: flex; */
+    align-items: space-between;
+    max-width: inherit;
+    cursor: pointer;
 }
-
 .music{
     margin-bottom: 0;
     display: flex;
     align-content: space-between;
+    cursor: pointer;
 }
-
 .title{
     margin: 0;
     font-size: 12px;
