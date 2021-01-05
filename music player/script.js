@@ -14,13 +14,16 @@ MUSICLIST.forEach((music) => {
        index = music.dataset.musicNum;
        PLAYER.src = srcList[index - 1];
    });
+
+   function nextSong(index) {
+        PLAYER.src = srcList[index + 1];
+   }
 });
 
 let songsNum = MUSICLIST.length;
 function songEnded() {
     for (index = index; index <= songsNum; index++) {
         PLAYER.src = srcList[index + 1];
-        
     }
 }
 
@@ -33,17 +36,17 @@ function loopSong() {
     }    
 }
         
-function nextSong(params) {
-    pass;
-}
+// function nextSong(params) {
+//     pass;
+// }
 
-function prevSong(params) {
-    pass;
-}
+// function prevSong(params) {
+//     pass;
+// }
 
 LOOP.addEventListener("click", loopSong);
 NEXT.addEventListener("click", nextSong)
-PREV.addEventListener("click", prevSong)
+// PREV.addEventListener("click", prevSong)
 
 // reason next, prev
 //use flex to reorder the appearance of musicList
