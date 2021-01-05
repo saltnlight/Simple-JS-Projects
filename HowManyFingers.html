@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple javascript game to guess how many finger">
+    <title>How Many Fingers</title>
+
+    <style>
+        section{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form{
+            min-width: 35vw;
+            margin: 25vh auto;
+            padding: 1rem 1rem;
+            justify-content: space-around;
+            background-color: #92b1bb;
+            border-radius: 0 5px 5px 5px;
+            box-shadow: 5px 5px rgb(248, 149, 149);
+        }
+
+        button{
+            margin: 5vh;
+            padding: 0.5rem 0.25rem;
+            border-radius: 5px;
+        }
+
+        input{
+            display: inline-block;
+            padding: 0.5rem 0.25rem;
+            border-radius: 5px;
+            border: none;
+            border-bottom: 1.5px solid rgb(248, 149, 149);
+        }
+    </style>
+</head>
+<body>
+    <section> 
+        <form id="form1">
+            <p>How Many Fingers I'm I Holding Up?</p>
+            <input type="number" name="number" id="number">
+            <button id="submit">Guess</button>
+        </form>
+        <hr>
+        <form id="form2">
+            <p>How Many Fingers You Are Holding Up?</p>
+            <input type="number" id="myNum">
+            <button type="submit" id="play">Play</button>
+            <div>
+                <button id="yes">Correct</button>
+                <button id="no">Naah!!</button>
+            </div>
+        </form>
+    </section>
+    <script>
+        const FORM1 = document.getElementById("form1");
+        const NUM = document.querySelector("#number");
+        const SUBMIT = document.querySelector("#submit");
+        var newParag = document.createElement("p");
+
+        const FORM2 = document.getElementById("form2");
+        const PLAY = document.querySelector("#play");
+        const MYNUM = document.querySelector("#myNum");
+        const YES = document.querySelector("#yes");
+        const NO = document.querySelector("#no");
+        var newParag1 = document.createElement("p");
+        
+        SUBMIT.addEventListener("click", function(e){
+            e.preventDefault();
+            var x = Math.random();
+            x = x * 10;
+            x = Math.floor(x);
+
+            if (NUM.value == x){
+                alert("You're Right. The number is indeed " + x);
+            } else if (NUM.value == ""){
+                newParag.innerHTML = "";
+                var failed = document.createTextNode("Oops!!! Try Again. The number is " + x );
+                newParag.appendChild(failed);
+                FORM1.appendChild(newParag);
+            } else {
+                newParag.innerHTML = "";
+                var failed = document.createTextNode("Oops!!! Try Again. The number is " + x );
+                newParag.appendChild(failed);
+                FORM1.appendChild(newParag);
+            }       
+        });
+
+        PLAY.addEventListener("click", function(e){
+            e.preventDefault();
+            y = MYNUM.value;
+            
+            z = Math.random();
+            z = z * 10;
+            z = Math.floor(z);
+            
+        });
+
+        YES.addEventListener("click", function(e){
+            alert("Yaah. See Computers are Smart");
+            return 1;
+        });
+
+        NO.addEventListener("click", function(e){
+            // e.preventDefault();
+            let i = 0;
+            while (y != z) {
+                newParag1.innerHTML = "";
+                txt = document.createTextNode("I  Guess" + z);
+                newParag1.appendChild(txt);
+                FORM2.appendChild(newParag1);
+                i++;
+            }
+        });
+    </script>
+</body>
+</html>
