@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Tester</title>
+    <style>
+    body{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    section{
+        min-height: 65vh;
+        background-color: lightgoldenrodyellow;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+        position: relative;
+    }
+    .square{
+        border-radius: 0;
+    }
+    .circle{
+        border-radius: 50%;
+    }
+    .hide{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Test Your Reaction Time</h1>
+        <p>Click on the boxes or circles as quickly as possible</p>
+        <p>Your Reaction Time: <span id="reactionTime">Not attempted yet</span></p>
+    </header>
+    <section>
+        <div id="box" class="s"></div>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
