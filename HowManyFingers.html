@@ -40,34 +40,25 @@
 <body>
     <section> 
         <form id="form1">
-            <p>How Many Fingers I'm I Holding Up?</p>
+            <p>1. How Many Fingers I'm I Holding Up?</p>
             <input type="number" name="number" id="number">
             <button id="submit">Guess</button>
         </form>
         <hr>
         <form id="form2">
-            <p>How Many Fingers You Are Holding Up?</p>
+            <p>2. How Many Fingers You Are Holding Up?</p>
             <input type="number" id="myNum">
             <button type="submit" id="play">Play</button>
-            <div>
-                <button id="yes">Correct</button>
-                <button id="no">Naah!!</button>
-            </div>
         </form>
     </section>
+    
     <script>
+        // JS for the first card game
         const FORM1 = document.getElementById("form1");
         const NUM = document.querySelector("#number");
         const SUBMIT = document.querySelector("#submit");
         var newParag = document.createElement("p");
 
-        const FORM2 = document.getElementById("form2");
-        const PLAY = document.querySelector("#play");
-        const MYNUM = document.querySelector("#myNum");
-        const YES = document.querySelector("#yes");
-        const NO = document.querySelector("#no");
-        var newParag1 = document.createElement("p");
-        
         SUBMIT.addEventListener("click", function(e){
             e.preventDefault();
             var x = Math.random();
@@ -76,6 +67,7 @@
 
             if (NUM.value == x){
                 alert("You're Right. The number is indeed " + x);
+                newParag.innerHTML = "";
             } else if (NUM.value == ""){
                 newParag.innerHTML = "";
                 var failed = document.createTextNode("Oops!!! Try Again. The number is " + x );
@@ -88,33 +80,53 @@
                 FORM1.appendChild(newParag);
             }       
         });
-
+        
+        // JS for the second card game
+        // 1st interactivity
+        const FORM2 = document.getElementById("form2");
+        const PLAY = document.querySelector("#play");
+        const MYNUM = document.querySelector("#myNum");
+        const YES = document.querySelector("#yes");
+        const NO = document.querySelector("#no");
+        var newParag1 = document.createElement("p");
+        
+        var guesses = 1;
         PLAY.addEventListener("click", function(e){
-            e.preventDefault();
-            y = MYNUM.value;
-            
-            z = Math.random();
-            z = z * 10;
-            z = Math.floor(z);
-            
-        });
-
-        YES.addEventListener("click", function(e){
-            alert("Yaah. See Computers are Smart");
-            return 1;
-        });
-
-        NO.addEventListener("click", function(e){
-            // e.preventDefault();
-            let i = 0;
-            while (y != z) {
+            e.preventDefault();            
+            var y = Math.random();
+            y = y * 10;
+            y = Math.floor(y);
+            if (MYNUM.value == y) {
+                alert("I guessed "+y+" in "+guesses+" trials. Computers are smart too.");
+                guesses = 1;
                 newParag1.innerHTML = "";
-                txt = document.createTextNode("I  Guess" + z);
-                newParag1.appendChild(txt);
+            } else {
+                newParag1.innerHTML = "";
+                yValue = document.createTextNode("I guessed "+y);
+                newParag1.appendChild(yValue);
                 FORM2.appendChild(newParag1);
-                i++;
+                guesses++;
             }
         });
+
+        // The code below offers a different interactivity to the second card game
+        // IF YOU UNCOMMENT THIS BLOCK OF CODE, YOU MUST COMMENT THE PREVIOUS BLOCK
+
+        // PLAY.addEventListener("click", function(e){
+        //     var gotIt = false; var guesses = 1;
+        //     e.preventDefault(); 
+        //     while (gotIt == false) {
+        //         var y = Math.random();
+        //         y = y * 10;
+        //         y = Math.floor(y);
+        //         if (MYNUM.value == y) {
+        //             gotIt = true;
+        //         } else {
+        //             guesses++;
+        //         }
+        //     }
+        //     alert("I guessed "+ y +" too. It took "+guesses+" guesses tho")
+        // });
     </script>
 </body>
 </html>
